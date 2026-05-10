@@ -30,6 +30,21 @@ function addTodo (event) {
       title: input.value,
       completed: false
     }
+    // POST
+    fetch('https://jsonplaceholder.typicode.com/todos', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newTodo)
+    })
+    .then(res => res.json())
+    .then(data => {
+      listOftodo.push(data);
+      localStorage.setItem('tasklist', JSON.stringify(listOftodo));
+      renderTodo(data);
+      event.target.value = '';
+    });
     let taskObj
     let editId = Number(input.dataset.editId)
     if (input.dataset.editId) {

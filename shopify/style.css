@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(46, 67, 3);
+}
+h2{
+    text-align: center;
+    color: rgb(67, 1, 1);
+}
+.draggable-container{
+    width: 300px;
+    margin: 50px auto;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+}
+.draggable-item{
+    padding: 10px;
+    margin: 5px 0;
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgb(189, 98, 98);
+    border-radius: 3px;
+    cursor: move;
+}
+.draggable{
+    cursor: grab;
+}
+.draggable:active{
+    cursor: grabbing;
+}

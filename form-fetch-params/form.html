@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <table>
+        <form action="formresult.html" method="get" class="bg-white shadow-lg rounded-xl p-6 w-full max-w-md space-y-4">
+            <tr>
+                <td><label for="fname" class="block text-sm font-medium text-gray-600">First Name</label></td>
+                <td><input type="text" id="fname" name="fname"
+                        class="w-full mt-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        placeholder="First Name" /></td>
+            </tr>
+            <tr>
+                <td><label for="lname" class="block text-sm font-medium text-gray-600">Last Name</label></td>
+                <td><input type="text" id="lname" name="lname" placeholder="Last Name"
+                        class="w-full mt-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="email" class="block text-sm font-medium text-gray-600">Email</label></td>
+                <td><input type="email" id="email" name="email" placeholder="Email"
+                        class="w-full mt-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="age" class="block text-sm font-medium text-gray-600">Age</label></td>
+                <td><input type="number" id="age" name="age" placeholder="Enter your age"
+                        class="w-full mt-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="gender" class="block text-sm font-medium text-gray-600">Gender</label></td>
+                <td><input type="text" id="gender" name="gender" placeholder="Type your gender"
+                        class="w-full mt-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="subject" class="block text-sm font-medium text-gray-600">Subject</label>
+                </td>
+                <td>
+                    <select id="subject" name="subject">
+                        <option value="english">English</option>
+                        <option value="science">Science</option>
+                        <option value="math">Math</option>
+                        <option value="english">English</option>
+                        <option value="science">Science</option>
+                        <option value="math">Math</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="image" class="block text-sm font-medium text-gray-600">Subject</label>
+                </td>
+                <td><input type="file" id="image" name="image"></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="favcolor" class="block text-sm font-medium text-gray-600">Select your favorite color:</label>
+                </td>
+                <td>
+                    <input type="color" id="favcolor" name="favcolor">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="birthday" class="block text-sm font-medium text-gray-600">Birthday:</label>
+                </td>
+                <td>
+
+                    <input type="date" id="birthday" name="birthday">
+                </td>
+            </tr>
+            <tr class="mt-1">
+                <td colspan="2" class="justify-between"><button type="submit"
+                        class="w-full bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600 transition">Submit
+                        form</button></td>
+            </tr>
+
+        </form>
+    </table>
+</body>
+
+</html>

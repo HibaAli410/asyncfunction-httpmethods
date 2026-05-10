@@ -1,0 +1,53 @@
+body{
+    margin:0;
+    height:100vh;
+    
+}
+#main{
+    width: 30%;
+    height: 50%;
+    margin-inline: 40%;
+    margin-block-start: 10%;
+    text-align: center;
+    justify-content: center;
+    border: 2px solid orange;
+}
+#container div {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+#numone, #numtwo{
+    width: 100%;
+    border: 1px solid blueviolet;
+    padding: 10px;
+}
+#buttondiv div{
+   display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
+    gap: 2px;
+}
+#operatorsdiv div{
+    display: flex;
+    flex-wrap: wrap;
+}
+#buttondiv div > button{
+    width: 100px;
+    height: 50px;
+    padding: 5px;
+    border: 2px solid gray;
+}
+#operatorsdiv button{
+    width: 70px;
+    height: 50px;
+    padding: 5px;
+    border: 2px solid rgb(206, 144, 144);
+}
+#result {
+    padding: 5px;
+    border: 2px solid rgb(241, 155, 155);
+}

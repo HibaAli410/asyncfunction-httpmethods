@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex justify-center mt-10">
+
+    <table class="border border-gray-400 shadow-lg">
+        <thead class="bg-gray-200">
+            <tr>
+                <th class="border px-4 py-2">First Name</th>
+                <th class="border px-4 py-2">Last Name</th>
+                <th class="border px-4 py-2">Email</th>
+                <th class="border px-4 py-2">Gender</th>
+                <th class="border px-4 py-2">Age</th>
+                <th class="border px-4 py-2">Subject</th>
+                <th class="border px-4 py-2">Image</th>
+                <th class="border px-4 py-2">FaviroutColor</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td class="border px-4 py-2" id="fname"></td>
+                <td class="border px-4 py-2" id="lname"></td>
+                <td class="border px-4 py-2" id="email"></td>
+                <td class="border px-4 py-2" id="gender"></td>
+                <td class="border px-4 py-2" id="age"></td>
+                <td class="border px-4 py-2 capitalize" id="subject" ></td>
+                <td class="border px-4 py-2" id="image"></td>
+                <td class="border px-4 py-2" id="color"></td>
+            </tr>
+        </tbody>
+
+    </table>
+
+    <script>
+        //console.log(location);
+        //console.log(location.protocol) //http:
+        //console.log(location.href) //http://127.0.0.1:5500/formresult.html?fname=&lname=&email=&age=&gender=
+        //console.log(location.search); read data from url query string
+        //console.log(new URLSearchParams(location.search))
+        const params = new URLSearchParams(location.search);
+        //console.log(params);
+        const fname = params.get('fname');
+        const lname = params.get('lname');
+        const email = params.get('email');
+        const gender = params.get('gender');
+        const age = params.get('age');
+        const subject = params.getAll('subject');
+        console.log(subject);
+        console.log(fname);
+        document.getElementById('fname').innerText = fname;
+        document.getElementById('lname').innerText = lname;
+        document.getElementById('email').innerText = email;
+        document.getElementById('gender').innerText = gender;
+        document.getElementById('age').innerText = age;
+        document.getElementById('subject').innerText = subject;
+
+        
+    </script>
+</body>
+
+</html>

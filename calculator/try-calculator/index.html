@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <input type="text" id="inputnumber" class="inputclass" disabled />
+    <button onclick="num('2')">2</button>
+    <button onclick="num('3')">3</button>
+    <button onclick="op('+')">+</button>
+    <button onclick="op('-')">-</button>
+    <button onclick="calculate()">=</button>
+    <button onclick="clearDisplay()">Clear</button>
+
+    <script>
+      let currentnumber = ''
+      let priviousnumber = ''
+      let operation = ''
+
+      function num(number) {
+        currentnumber += number
+        document.getElementById('inputnumber').value =
+          priviousnumber + '' + operation
+      }
+      function op(operator) {
+        if (currentnumber === '') return
+        // if(priviousnumber !== ""){
+        //     calculate();
+        // }
+        operation = operator
+        priviousnumber = currentnumber
+        currentnumber = ''
+        document.getElementById('inputnumber').value =
+          priviousnumber + '' + operation
+      }
+      function calculate() {
+        if (priviousnumber === '' || currentnumber === '') return
+        let result ;
+        let prev = parseFloat(priviousnumber);
+        let current = parseFloat(currentnumber);
+        switch (operation) {
+                case '+':
+                    result = prev + current;
+                    break;
+                case '-':
+                    result = prev - current;
+                    break;
+                case '*':
+                    result = prev * current;
+                    break;
+                case '/':
+                    if (current === 0) {
+                        alert("Cannot divide by zero");
+                        return;
+                    }
+                    result = prev / current;
+                    break;
+                default:
+                    return;
+            }
+            currentnumber = result.toString();
+            priviousnumber = '';
+            operation = '';
+            document.getElementById('inputnumber').value = currentnumber;
+      }
+       function clearDisplay() {
+            currentnumber = '';
+            priviousnumber = '';
+            operation = '';
+            document.getElementById('inputnumber').value = '';
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Practice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body> 
+    <p id="para"></p>
+    <div id="makedayroutine" class="flex justify-center mx-auto w-full">
+        <form method="get" target="_self" onsubmit="todo(event)">
+            <input type="text" id="routine" name="routine" placeholder="Write your Routine Task" 
+            class="w-80 border-2 border-gray-400 bg-gray-100 p-2 rounded">
+        </form>
+    </div>
+    <script>
+        const routine = document.getElementById('routine');
+        // console.log(routine);
+       function todo(event){
+        console.log(event);
+        event.preventDefault();
+        const value = event.target.routine.value;
+        console.log(value);
+       }
+        const weeks = [];
+        // console.log(weeks);
+        // weeks.push('Saturday');
+        // console.log(weeks);
+        weeks.push('Sunday', 'Monday', 'Teusday');
+        console.log(weeks);
+        weeks.indexOf('monday');
+        console.log(weeks.indexOf('Teusday')); //false present -1 and true present index number
+        weeks.pop(); console.log(weeks);
+        weeks.push('Saturday'); console.log(weeks);
+        weeks.unshift('Thrusday'); console.log(weeks);
+        weeks.shift(); console.log(weeks);
+        weeks.unshift('Thrusday'); console.log(weeks);
+        weeks.shift(); console.log(weeks);
+        console.log(weeks);
+
+
+        const Ages = [12, 18, "Twenty", 24, 28, "thirty", false];
+        console.log(Ages[5]);  // 30
+        Ages.length;
+        Ages.push(29);
+        console.log(Ages);
+
+        Ages.sort();
+        console.log(Ages);
+
+        console.log("indexabdajbsdkdk" +Ages[Ages.length - 3]);
+        console.log("index" + Ages[Ages.length - 1]);
+        console.log(Ages[Ages.length - 5]);
+        console.log(Ages[Ages.length - 6]);
+
+        console.log(Ages.includes(12)); // true
+        console.log(Ages.includes(2)); // false 
+        console.log("Checking is not found in ages ", Ages.includes("checking"));
+
+        Ages.push(17);
+        text = "<ol>";
+        for (let x in Ages) {
+            //console.log("index number is ", x,"in ", Ages);
+            text += "<li>" + Ages[x] + "</li>"
+            console.log("index number is ", x, "value is ", Ages[x]);
+            if (Ages[x] < 18) {
+                console.log("you are not 18 ")
+            }
+        }
+        text += "</ol>";
+        document.getElementById('para').innerHTML = text;
+
+        //Array with objects ---1
+        const student = [
+            { name: "Ali", age: 20 },
+            { name: "Sara", age: 21 },
+            { name: "Ahmed", age: 19 }
+        ];
+        console.log(student[0].age, student[0].name );
+        console.log(student[2].age, student[1].name );
+
+        //Array with objects ---2
+        const school = {
+            name: ["Iqra School"],
+            teachers: [
+                { name: 'Uzma', subject: 'biology', "class-rank": '9th' },
+                { name: 'Amir Hassan', subject: 'mathematics', "class-rank": '10th' },
+                { name: 'Rahila', subject: ['physics','English'], "class-rank": '11 12' },
+            ]
+        }
+        console.log(school.teachers[0].name); //uzma
+        console.log(school.teachers[2].subject[1]); // englis
+
+        //Objects with array ---1
+        const icecream = {
+            texture: ["corn", "popcilce"],
+            flavour: ["vanila", "choclate", "Mango", "pineapple"]
+        }
+        console.log("You chose icecreame flavour",icecream.flavour[3]);
+
+        //Objects with array ---1
+        const teachers = { "math-teacher": 'Fahad', english_teacher: 'Haris', "9thclasstecaher": 'Mehmooda' };
+        console.log(teachers);
+        const subjects = {
+            "chemistry": ['Ali', 'Zainab', 'Hurain'],
+            "physics": ['Mehmood', 'Fazila', 'rubaisha'],
+            "biology": ['Uzma', 'khemchand', 'Rahila'],
+            "mathematics": ['Amir Hassan', 'Rashid', 'arshad']
+        }
+
+        console.log(subjects);
+        console.log(subjects.chemistry[0]);
+        console.log(subjects.chemistry[1]);
+        console.log(subjects.mathematics[2]);
+        console.log(subjects.biology[1]);
+        console.log(subjects.mathematics[0]);
+        console.log(subjects.physics[1]);
+
+        //Objects with array ---1
+        const accessories = {
+            female : [],
+            male: [],
+            children:[
+                {
+                    cloths:["Dressingpants","gense","pajamas","shirts"],
+                    shoes: ["sandles", "lofers","khusas"]
+                }
+            ],
+            homedecore:[
+                {paintings:[]},
+                {furniture:[]},
+                {plants:[]}
+            ]
+
+        }
+        console.log(accessories.children[0].shoes[2]);
+       
+    </script>
+</body>
+
+</html>

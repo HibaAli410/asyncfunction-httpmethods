@@ -26,6 +26,10 @@ if (listOftodo.length === 0) {
 function addTodo (event) {
   if (event.keyCode === 13 && event.target.value.trim() !== '') {
     listOftodo = JSON.parse(localStorage.getItem('tasklist')) || []
+    const newTodo = {
+      title: input.value,
+      completed: false
+    }
     let taskObj
     let editId = Number(input.dataset.editId)
     if (input.dataset.editId) {

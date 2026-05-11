@@ -44,3 +44,24 @@ bookTicket('Huzaifa', 12).then(
     document.getElementById('displayPromise').innerHTML = under18
   }
 )
+// nested promise
+function fname (name) {
+  return Promise.resolve(name)
+}
+function age (value) {
+  return Promise.resolve(value + ' is years old')
+}
+function status (status) {
+  return Promise.resolve(status + 'and you are single')
+}
+// promise chaining
+fname('hiba')
+  .then(name => {
+    return age(name);
+  })
+  .then((age) => {
+    return status(age);
+  })
+  .then((status) => {
+    document.getElementById('displayChainingPromise').innerHTML = status;
+  })

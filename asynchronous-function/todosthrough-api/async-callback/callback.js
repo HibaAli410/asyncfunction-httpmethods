@@ -38,6 +38,32 @@
     function displayData(data){
         console.log(data);
         document.getElementById('dataDisplay').textContent = data;
-        
     }
     fetchData(displayData);
+
+    //callback function example 3
+    function performTask(task, callback){
+        console.log("Performing task: " + task);
+        setTimeout(()=>{
+            const result = "Result of "+ task;
+            callback(result);
+        },5000);
+    }
+    function handleResult(result){
+        console.log(result);
+    }
+    performTask("Sample Task", handleResult);
+
+    // Callback function example 4
+    function persentageOf(num1, num2, num3,num4,num5, callback){
+        setTimeout(()=>{
+            const result = (num1+num2+num3+num4+num5)/500*100 + "%";
+            callback(result);
+        },2000);
+    }
+    function displayPersentage(result){
+        console.log("the persentage is :"+ result);
+    }
+    persentageOf(70,80,65,90,50, displayPersentage);
+
+    

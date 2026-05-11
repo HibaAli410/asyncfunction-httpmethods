@@ -2,7 +2,6 @@
 let listOftodo = JSON.parse(localStorage.getItem('tasklist')) || [];
 
 if (listOftodo.length === 0) {
-  // First time only → fetch 10 todos
   for (let one = 1; one <= 10; one++) {
     fetch(`https://jsonplaceholder.typicode.com/todos/${one}`)
       .then(res => res.json())
@@ -24,25 +23,38 @@ if (listOftodo.length === 0) {
   });
 }
 //Add a todo function
-function addTodo (event) {
+function addTodo (event,editId) {
   if (event.keyCode === 13 && event.target.value.trim() !== '') {
     listOftodo = JSON.parse(localStorage.getItem('tasklist')) || []
     let taskObj
+    
     let editId = Number(input.dataset.editId)
     if (input.dataset.editId) {
       taskObj = { id: editId, title: input.value, completed: false }
       listOftodo.push(taskObj)
       delete input.dataset.editId
     } else {
-      taskObj = {
-        id: Date.now(),
-        completed: false,
-        title: event.target.value
-      }
-      listOftodo.push(taskObj)
+        fetch('https://jsonplaceholder.typicode.com/todos',{
+        method: 'POST',
+        headers:{'Content-type':'application/json'},
+        body: JSON.stringify({id: Date.now(), title:event.target.value, completed:false})
+        })
+        .then(serverres => serverres.json())
+        .then(taskObj=>{
+            console.log(taskObj);
+            listOftodo.push(taskObj)
+            localStorage.setItem('tasklist', JSON.stringify(listOftodo))
+            renderTodo(taskObj, taskObj.id)
+        })
+    //   taskObj = {
+    //     id: Date.now(),
+    //     completed: false,
+    //     title: event.target.value
+    //   }
+      
     }
     localStorage.setItem('tasklist', JSON.stringify(listOftodo))
-    renderTodo(taskObj, taskObj['id'])
+    renderTodo(taskObj, taskObj.id)
     event.target.value = ''
   }
 }

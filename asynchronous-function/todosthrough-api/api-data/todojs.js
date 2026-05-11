@@ -2,6 +2,7 @@
 let listOftodo = JSON.parse(localStorage.getItem('tasklist')) || [];
 
 if (listOftodo.length === 0) {
+  // First time only → fetch 10 todos
   for (let one = 1; one <= 10; one++) {
     fetch(`https://jsonplaceholder.typicode.com/todos/${one}`)
       .then(res => res.json())
@@ -12,7 +13,6 @@ if (listOftodo.length === 0) {
           'tasklist',
           JSON.stringify(listOftodo)
         );
-
         renderTodo(todo, todo.id);
       });
   }
@@ -26,11 +26,6 @@ if (listOftodo.length === 0) {
 function addTodo (event) {
   if (event.keyCode === 13 && event.target.value.trim() !== '') {
     listOftodo = JSON.parse(localStorage.getItem('tasklist')) || []
-    const newTodo = {
-      title: input.value,
-      completed: false
-    }
-    
     let taskObj
     let editId = Number(input.dataset.editId)
     if (input.dataset.editId) {

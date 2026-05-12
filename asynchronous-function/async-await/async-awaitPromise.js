@@ -125,4 +125,21 @@ async function bookingTaxi() {
   let acceptes = await bookingAccepted()
   let arrived = await taxiArrived()
 }
-bookingTaxi()
+bookingTaxi();
+
+// try and catch
+function fail(){
+return Promise.reject('Promise is Rejected');
+//return Promis.resolve('Promise is resolved successfully');
+//return Promise.resolve('Promise is resolved successfully');
+}
+async function handleerror(){
+  try{
+    let result = await fail();
+    console.log(result);
+  }
+  catch(error){
+    console.log(error);
+  }
+} 
+handleerror();

@@ -5,8 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fetching Data</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="./rocket.png" type="image/x-icon" />
+    <style>
+        div {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            align-items: center;
+            width: 60%;
+            margin: 0px auto;
+            background: linear-gradient(to right, #8456ca, #9c3e3e);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+            background: transparent;
+            padding: 10px;
+        }
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            color: azure;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+            width: 60px;
+            height: 60px;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1 class="w-full justify-center text-center font-bold p-8 text-orange-800 bg-orange-200">Fetching Data</h1>
+    <p class="text-lg bg-gray-400 text-gray-100 m-4 p-4 text-center">example of fetching data from an API using JavaScript.</p>
+    <div id="display">
+
+    </div>
+
+    <script src="https://unpkg.com/swapy/dist/swapy.min.js"></script>
+    <script src="./fetchdata.js"></script>
 </body>
 </html>

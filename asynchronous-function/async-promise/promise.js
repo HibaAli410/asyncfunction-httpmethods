@@ -106,3 +106,8 @@ calculateProfit(100, 500).then(
     document.getElementById('displayProfit').innerHTML = error;
   }
 )
+
+const fetching = fetch("https://jsonplaceholder.typicode.com/comments")
+fetching.then(res => res.json()).then(data => {
+  console.log(data);
+})

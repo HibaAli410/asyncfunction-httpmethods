@@ -5,13 +5,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modules</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
 
 
     <script type="module">
+
         import { heading } from './heading.js';
+        import { first, second, result } from './each-variables.js';
+        import { name, age } from './export-once-at.js';
+        import { add } from './add.js';
+        //heading import
+        const h1 = heading("Modules")
+        document.body.appendChild(h1);
+
+
+        // each variable import
+        const div = document.createElement('div');
+        const p = document.createElement('p');
+        const span = document.createElement('span');
+        p.textContent = first + " " + second + " " + result;
+        div.appendChild(span);
+        div.appendChild(p);
+        document.body.appendChild(div);
+
+        // once at 
+        const divonce = document.createElement('div');
+        divonce.classList.add(
+            'flex',
+            'flex-row',
+            'mx-auto',
+            'justify-center',
+            'w-1/2',
+            'radius-4',
+            'border-4',
+            'border-gray-400'
+        )
+        divonce.textContent = name + " " + age;
+        document.body.appendChild(divonce);
+
+        // import add function
+        const adding = add(3, 5, 7, 9);
+        const spanadd = document.createElement('span');
+        spanadd.textContent = "This is the sum of 4 values " + adding;
+        document.body.appendChild(spanadd);
     </script>
 </body>
 

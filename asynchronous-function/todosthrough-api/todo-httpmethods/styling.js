@@ -8,7 +8,7 @@ div.classList.add(
   'mt-10',
   'rounded-lg',
   'p-4'
-);
+)
 const ul = document.createElement('ul')
 input.classList.add(
   'w-full',
@@ -63,12 +63,10 @@ function renderTodo (task, id) {
     tasklist.splice(drageoverindex, 0, drageitem)
     localStorage.setItem('tasklist', JSON.stringify(tasklist))
     //remove from privious position
-    ul.innerHTML = "";
+    ul.innerHTML = ''
     tasklist.forEach(element => {
       renderTodo(element, element.id)
     })
-
-
   })
   const checkbox = document.createElement('input')
   checkbox.type = 'checkbox'
@@ -151,7 +149,7 @@ function renderTodo (task, id) {
     let liIndex = tasklist.findIndex(item => item.id === id)
     if (confirmation && checkbox.checked != true) {
       li.remove()
-
+      //["m","z","4","t","y","5","6"]
       tasklist.splice(liIndex, 1)
       localStorage.setItem('tasklist', JSON.stringify(tasklist))
     }
